@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "caterogies",
+  "info": {
+    "singularName": "caterogy",
+    "pluralName": "caterogies",
+    "displayName": "caterogy",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    },
+    "products": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::product.product",
+      "mappedBy": "caterogies"
+    }
+  }
+}
